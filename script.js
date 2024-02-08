@@ -153,18 +153,19 @@ function displayLibrary() {
     });
 }
 
-const newBook = document.querySelector('.new-book');
+const newBookButton = document.querySelector('.new-book');
 const dialog = document.querySelector('dialog');
 const library = document.querySelector(".library");
 const script = document.querySelector("#script");
 const submit = document.querySelector("#submit");
 
 
-newBook.addEventListener('click', (e) => {
+newBookButton.addEventListener('click', (e) => {
     e.preventDefault();
 
     dialog.open = dialog.open ? false : true;
-})
+});
+
 submit.addEventListener('click', (e) => {
     e.preventDefault();
 
