@@ -8,6 +8,8 @@ function Book(title, author, read) {
 
 Book.prototype.toggleRead = () => {
     this.read = this.read ? false : true;
+    displayLibrary();
+    console.log(this.read);
 }
 
 // Book.prototype.displayBook = () => {
@@ -113,7 +115,8 @@ function addBookToLibrary(book) {
 
 function displayLibrary() {
     library.textContent = '';
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book, index) => {
+        book.index = index;
         const bookContainer = document.createElement('div');
         bookContainer.classList.add("book-container");
 
@@ -141,6 +144,7 @@ function displayLibrary() {
 
         remove.addEventListener('click', (e) => {
             e.preventDefault();
+            myLibrary.splice(book.index, 1);
             bookContainer.remove();
         });
 
@@ -151,6 +155,7 @@ function displayLibrary() {
 
         library.appendChild(bookContainer);
     });
+    console.log(myLibrary);
 }
 
 const newBookButton = document.querySelector('.new-book');
