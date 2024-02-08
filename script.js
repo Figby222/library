@@ -8,14 +8,42 @@ function Book(title, author, read) {
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
+
+    const bookContainer = document.createElement('div');
+    bookContainer.classList.add("book-container");
+
+    const title = document.createElement('div');
+    title.textContent = `Title: ${book.title}`;
+
+    const author = document.createElement('div');
+    author.textContent = `Author: ${book.author}`;
+
+    const read = document.createElement('div');
+    read.textContent = `Read: ${book.read ? "Read" : "Not read"}`;
+
+    bookContainer.appendChild(title);
+    bookContainer.appendChild(author);
+    bookContainer.appendChild(read);
+
+    library.appendChild(bookContainer);
 }
 
 function displayLibrary() {
-    console.table(myLibrary);
+    console.log(myLibrary);
 }
 
-const myBook = new Book("HARRY POTTER", "asiflohfiloda");
-const myBook2 = new Book("sialudhoiufhas", "author");
-addBookToLibrary(myBook);
-addBookToLibrary(myBook2);
-displayLibrary();
+const library = document.querySelector(".library");
+const script = document.querySelector("#script");
+const submit = document.querySelector("#submit");
+
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    const title = document.querySelector("#title");
+    const author = document.querySelector("#author");
+    const readCheckbox = document.querySelector("#read");
+
+    const newBook = new Book(title.value, author.value, readCheckbox.checked);
+    addBookToLibrary(newBook);
+    displayLibrary();
+});
+
