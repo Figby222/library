@@ -1,0 +1,8 @@
+body {
+    background: beige;
+}
+.book-container {
+    background-color: blue;
+    color: yellow;
+    border: 3px solid yellow;
+}
