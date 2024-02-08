@@ -34,7 +34,7 @@ function addBookToLibrary(book) {
     bookContainer.appendChild(author);
     bookContainer.appendChild(read);
     bookContainer.appendChild(remove);
-    
+
     library.appendChild(bookContainer);
 }
 
@@ -42,18 +42,26 @@ function displayLibrary() {
     console.log(myLibrary);
 }
 
+const newBook = document.querySelector('.new-book');
+const dialog = document.querySelector('dialog');
 const library = document.querySelector(".library");
 const script = document.querySelector("#script");
 const submit = document.querySelector("#submit");
 
+newBook.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    dialog.open = dialog.open ? false : true;
+})
 submit.addEventListener('click', (e) => {
     e.preventDefault();
+
     const title = document.querySelector("#title");
     const author = document.querySelector("#author");
     const readCheckbox = document.querySelector("#read");
 
     const newBook = new Book(title.value, author.value, readCheckbox.checked);
     addBookToLibrary(newBook);
-    displayLibrary();
+    // displayLibrary();
 });
 
