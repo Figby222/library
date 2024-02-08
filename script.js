@@ -21,10 +21,20 @@ function addBookToLibrary(book) {
     const read = document.createElement('div');
     read.textContent = `Read: ${book.read ? "Read" : "Not read"}`;
 
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.textContent = 'Remove';
+
+    remove.addEventListener('click', (e) => {
+        e.preventDefault();
+        bookContainer.remove();
+    });
+
     bookContainer.appendChild(title);
     bookContainer.appendChild(author);
     bookContainer.appendChild(read);
-
+    bookContainer.appendChild(remove);
+    
     library.appendChild(bookContainer);
 }
 
