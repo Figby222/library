@@ -6,10 +6,10 @@ function Book(title, author, read) {
     this.read = read ? read : false;
 }
 
-Book.prototype.toggleRead = () => {
+Book.prototype.toggleRead = function () {
     this.read = this.read ? false : true;
     displayLibrary();
-    console.log(this.read);
+    // console.log(this == myLibrary[0]); // true
 }
 
 // Book.prototype.displayBook = () => {
@@ -155,6 +155,7 @@ function displayLibrary() {
 
         library.appendChild(bookContainer);
     });
+    // console.log(myLibrary);
 }
 
 const newBookButton = document.querySelector('.new-book');
