@@ -1,17 +1,17 @@
 const myLibrary = [];
 
-function Book(title, author, read) {
-    this.title = title;
-    this.author = author;
-    this.read = read ? read : false;
-}
+class Book {
+    constructor(title, author, read) {
+        this.title = title;
+        this.author = author;
+        this.read = read;
+    }
 
-Book.prototype.toggleRead = function () {
-    this.read = this.read ? false : true;
-    displayLibrary();
-    // console.log(this == myLibrary[0]); // true
-}
-
+    toggleRead () {
+        this.read = this.read ? false : true;
+        displayLibrary();
+    }
+};
 // Book.prototype.displayBook = () => {
 //     this.bookContainer = document.createElement('div');
 //     this.bookContainer.classList.add('book-container');
