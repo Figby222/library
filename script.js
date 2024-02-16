@@ -155,7 +155,6 @@ function displayLibrary() {
 
         library.appendChild(bookContainer);
     });
-    console.log(myLibrary);
 }
 
 const newBookButton = document.querySelector('.new-book');
