@@ -88,6 +88,11 @@ form.addEventListener('submit', (e) => {
 });
 
 title.addEventListener('input', (e) => {
+    if (title.validity.tooShort) {
+        title.setCustomValidity('Enter a longer title');
+    } else {
+        title.setCustomValidity('');
+    }
 });
 submit.addEventListener('click', (e) => {
     // e.preventDefault();
