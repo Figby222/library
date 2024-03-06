@@ -163,6 +163,9 @@ const dialog = document.querySelector('dialog');
 const library = document.querySelector(".library");
 const script = document.querySelector("#script");
 const submit = document.querySelector("#submit");
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const readCheckbox = document.querySelector("#read");
 
 
 newBookButton.addEventListener('click', (e) => {
@@ -174,9 +177,6 @@ newBookButton.addEventListener('click', (e) => {
 submit.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const title = document.querySelector("#title");
-    const author = document.querySelector("#author");
-    const readCheckbox = document.querySelector("#read");
 
     const newBook = new Book(title.value, author.value, readCheckbox.checked);
     addBookToLibrary(newBook);
