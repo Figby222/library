@@ -91,9 +91,13 @@ title.addEventListener('input', (e) => {
 });
 submit.addEventListener('click', (e) => {
     // e.preventDefault();
+    if (!form.validity.valid) {
+        e.preventDefault();
+    }
     
-    
-    const newBook = new Book(title.value, author.value, readCheckbox.checked);
-    addBookToLibrary(newBook);
-    displayLibrary();
+    if (form.validity.valid) {
+        const newBook = new Book(title.value, author.value, readCheckbox.checked);
+        addBookToLibrary(newBook);
+        displayLibrary();
+    }
 });
