@@ -101,8 +101,10 @@ form.addEventListener('submit', (e) => {
     // }
     
     // if (form.validity.valid) {
-        const newBook = new Book(title.value, author.value, readCheckbox.checked);
-        addBookToLibrary(newBook);
-        displayLibrary();
+        if (form.checkValidity()) {
+            const newBook = new Book(title.value, author.value, readCheckbox.checked);
+            addBookToLibrary(newBook);
+            displayLibrary();
+        }
     // }
 });
