@@ -94,6 +94,16 @@ title.addEventListener('input', (e) => {
         title.setCustomValidity('');
     }
 });
+
+author.addEventListener('input', (e) => {
+    if (author.validity.tooShort) {
+        author.setCustomValidity('Enter a longer author');
+    } else {
+        author.setCustomValidity('');
+    }
+});
+
+
 form.addEventListener('submit', (e) => {
     // e.preventDefault();
     // if (!form.validity.valid) {
