@@ -94,15 +94,15 @@ title.addEventListener('input', (e) => {
         title.setCustomValidity('');
     }
 });
-submit.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
     // e.preventDefault();
-    if (!form.validity.valid) {
+    // if (!form.validity.valid) {
         e.preventDefault();
-    }
+    // }
     
-    if (form.validity.valid) {
+    // if (form.validity.valid) {
         const newBook = new Book(title.value, author.value, readCheckbox.checked);
         addBookToLibrary(newBook);
         displayLibrary();
-    }
+    // }
 });
